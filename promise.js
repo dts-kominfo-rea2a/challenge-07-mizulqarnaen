@@ -6,7 +6,7 @@ const promiseOutput = async (emotion) => {
     let filmTheaterIXX = await promiseTheaterIXX();
     let filmTheater = filmTheaterIXX.concat(await promiseTheaterVGC());
 
-    return filmTheater;
+    return filmTheater.filter((data) => {data.hasil === emotion});
   } catch(err) {
     return err;
   }
